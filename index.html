@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookaService - Trusted Home Services in Springs</title>
+    <style>
+        :root {
+            --primary: #0070f3;
+            --dark: #1e1e24;
+            --light: #f7f9fa;
+            --gray: #657786;
+            --success: #00b074;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        body { background-color: var(--light); color: var(--dark); padding: 20px 10px; }
+        .container { max-width: 500px; margin: 0 auto; background: white; padding: 25px; border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
+        .logo { font-size: 24px; font-weight: 800; color: var(--primary); text-align: center; margin-bottom: 5px; }
+        .tagline { text-align: center; font-size: 14px; color: var(--gray); margin-bottom: 25px; }
+        .pricing-box { background: #f0f7ff; padding: 15px; border-radius: 10px; margin-bottom: 25px; border-left: 4px solid var(--primary); }
+        .pricing-box h3 { font-size: 14px; margin-bottom: 8px; color: var(--dark); }
+        .pricing-box ul { list-style: none; font-size: 13px; line-height: 1.6; color: #333; }
+        .form-group { margin-bottom: 18px; }
+        label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 6px; }
+        input, select, textarea { width: 100%; padding: 12px; border: 1px solid #ccd6dd; border-radius: 8px; font-size: 15px; background: #fff; }
+        input:focus, select:focus { border-color: var(--primary); outline: none; }
+        .bank-info { background: #fffde7; border: 1px dashed #fbc02d; padding: 15px; border-radius: 10px; font-size: 13px; margin: 20px 0; line-height: 1.5; }
+        .legal-check { display: flex; align-items: flex-start; gap: 10px; font-size: 12px; color: var(--gray); line-height: 1.4; margin-bottom: 20px; }
+        .legal-check input { width: auto; margin-top: 3px; }
+        button { width: 100%; background: var(--primary); color: white; border: none; padding: 14px; border-radius: 8px; font-size: 16px; font-weight: 700; cursor: pointer; transition: background 0.2s; }
+        button:hover { background: #0061d2; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="logo">🚀 BookaService</div>
+    <div class="tagline">Verified, trusted local help in Springs, Gauteng</div>
+
+    <div class="pricing-box">
+        <h3>📊 Flat-Rate Pricing (4-Hour Minimum System)</h3>
+        <ul>
+            <li>🧹 Cleaners & Gardeners: R50 / hour</li>
+            <li>🎨 Painters & Tilers: R65 / hour</li>
+            <li>🔧 Plumbers & Electricians: R450 Call-out fee</li>
+        </ul>
+    </div>
+
+    <!-- REPLACE YOUR_WEBHOOK_URL_HERE WITH YOUR SHEETMONKEY/MAKE URL ONCE CREATED -->
+    <form action="YOUR_WEBHOOK_URL_HERE" method="POST">
+        
+        <div class="form-group">
+            <label for="name">Your Name & Surname</label>
+            <input type="text" id="name" name="client_name" placeholder="e.g. Johan Smith" required>
+        </div>
+
+        <div class="form-group">
+            <label for="phone">WhatsApp Mobile Number</label>
+            <input type="tel" id="phone" name="client_phone" placeholder="e.g. 0821234567" required>
+        </div>
+
+        <div class="form-group">
+            <label for="suburb">Springs Neighborhood Suburb</label>
+            <select id="suburb" name="client_suburb" required>
+                <option value="">-- Select Suburb --</option>
+                <option value="Selection Park">Selection Park</option>
+                <option value="Casseldale">Casseldale</option>
+                <option value="Strubenvale">Strubenvale</option>
+                <option value="Geduld">Geduld</option>
+                <option value="Petersfield">Petersfield</option>
+                <option value="KwaThema">KwaThema</option>
+                <option value="Tsakane">Tsakane</option>
+                <option value="Nigel Road / Outer">Nigel Environs</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="service">Service Required</label>
+            <select id="service" name="service_type" required>
+                <option value="">-- Select Service --</option>
+                <option value="Domestic Cleaner">Domestic Cleaner</option>
+                <option value="Gardener">Gardener</option>
+                <option value="Painter">Painter</option>
+                <option value="Tiler">Tiler</option>
+                <option value="Plumber / Artisan">Plumber or Electrician</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="date">Requested Service Date</label>
+            <input type="date" id="date" name="booking_date" required>
+        </div>
+
+        <div class="form-group">
+            <label for="notes">Job Notes / Specific Requests</label>
+            <textarea id="notes" name="job_notes" rows="3" placeholder="Describe the work required..."></textarea>
+        </div>
+
+        <div class="bank-info">
+            <strong>🔒 Secured Escrow Payment System:</strong><br>
+            To activate this booking request, please pay the total estimated rate into our Capitec holding account using your <strong>Mobile Number</strong> as the payment reference. Workers are only paid directly after you confirm completion via our team WhatsApp.
+        </div>
+
+        <div class="legal-check">
+            <input type="checkbox" id="legal" name="liability_waiver" required>
+            <label for="legal">I understand BookaService is a peer-to-peer referral platform connecting independent providers who have submitted identity copies and SAPS criminal record affidavits. I agree that BookaService holds no liability for individual actions, theft, or property damage.</label>
+        </div>
+
+        <button type="submit">Submit Secure Booking Request</button>
+    </form>
+</div>
+
+</body>
+</html>
